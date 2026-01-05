@@ -198,11 +198,11 @@ The automated deployment process created all resources to enable the use of Vert
         gcloud storage buckets create gs://$BUCKET_NAME --project=$PROJECT_ID --default-storage-class=$STORAGE_CLASS --location=$BUCKET_LOCATION --uniform-bucket-level-access
         ```
 
-    1.  **Copying Data:** We need to copy over some PDFs - Alphabet Earnings Reports from 2004 to 2023 -  into the newly created bucket using `gsutil`.
+    1.  **Copying Data:** We need to copy over some PDFs - Alphabet Earnings Reports from 2004 to 2023 -  into the newly created bucket using `gcloud storage`.
 
 
         ```
-        gsutil -m cp -r "gs://cloud-samples-data-us-central1/gen-app-builder/search/alphabet-investor-pdfs" "gs://$BUCKET_NAME/data"
+        gcloud storage cp --recursive "gs://cloud-samples-data-us-central1/gen-app-builder/search/alphabet-investor-pdfs" "gs://$BUCKET_NAME/data"
         ```
 
         You can also download the folder manually and upload it to your storage account.
